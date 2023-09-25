@@ -1,0 +1,349 @@
+
+
+ *Data cleaning: 
+Làm sạch dữ liệu là quá trình thay đổi hoặc loại bỏ rác, dữ liệu không chính xác, trùng lặp, bị hỏng hoặc
+dữ liệu không đầy đủ trong một tập dữ liệu.
+
+- Không có cách nào tuyệt đối để mô tả chính xác các bước trong quy trình làm sạch dữ liệu vì
+các quy trình có thể khác nhau tùy theo tập dữ liệu.
+
+- Làm sạch dữ liệu đóng vai trò quan trọng trong việc phát triển các câu trả lời đáng tin cậy và trong quá trình phân tích.
+quá trình và được coi là một tính năng cơ bản của những điều cơ bản về khoa học thông tin.
+
+
+
+ *Tầm quan trọng của làm sạch dữ liêu:
+Làm sạch dữ liệu là nhiệm vụ quan trọng nhất cần được thực hiện với tư cách là một chuyên gia khoa học dữ liệu.
+
+- Việc có dữ liệu sai hoặc chất lượng kém có thể gây bất lợi cho quá trình và phân tích.
+
+- Việc có dữ liệu sạch cuối cùng sẽ tăng năng suất tổng thể và mang lại chất lượng tốt nhất
+thông tin trong việc ra quyết định của bạn.
+
+- Error-Free Data: Khi kết hợp nhiều nguồn dữ liệu thì có thể có rất nhiều lỗi.
+Thông qua việc làm sạch dữ liệu, các lỗi có thể được loại bỏ khỏi dữ liệu.
+
+- Data Quality: Chất lượng của dữ liệu là mức độ nó tuân theo các quy tắc cụ thể yêu cầu.
+
+- Accurate and Efficient: Đảm bảo dữ liệu gần với giá trị chính xác. Chúng tôi biết rằng hầu hết dữ liệu
+trong tập dữ liệu là hợp lệ và chúng ta nên tập trung vào việc thiết lập độ chính xác của nó.
+
+- Complete Data: Tính đầy đủ là mức độ mà chúng ta phải biết tất cả các giá trị cần thiết.
+Tính hoàn chỉnh khó đạt được hơn một chút so với độ chính xác hoặc chất lượng.
+
+- Maintains Data Consistency: Để đảm bảo dữ liệu nhất quán trong cùng một tập dữ liệu hoặc trên
+nhiều bộ dữ liệu, chúng ta có thể đo lường tính nhất quán bằng cách so sánh hai hệ thống tương tự nhau.
+
+
+ * Data cleaning Cycle:
+- Là phương pháp phân tích, phân biệt và hiệu chỉnh những dữ liệu thô, lộn xộn.
+
+- Làm sạch dữ liệu bao gồm việc điền các giá trị còn thiếu, phân biệt và sửa các lỗi có trong tập dữ liệu.
+Step 1: Remove Duplicates. ...
+Step 2: Remove Irrelevant Data. ...
+Step 3: Standardize capitalization. ...
+Step 4: Convert data type. ...
+Step 5: Handling Outliers. ...
+Step 6: Fix errors. ...
+Step 7: Language Translation. ...
+Step 8: Handle missing values.
+
+Bước 1: Loại bỏ các bản sao. ...
+Bước 2: Xóa dữ liệu không liên quan. ...
+Bước 3: Chuẩn hóa cách viết hoa. ...
+Bước 4: Chuyển đổi kiểu dữ liệu. ...
+Bước 5: Xử lý các ngoại lệ. ...
+Bước 6: Sửa lỗi. ...
+Bước 7: Dịch ngôn ngữ. ...
+Bước 8: Xử lý các giá trị còn thiếu.
+
+ * Missing Data:
+Thiếu dữ liệu là hiện tượng thiếu một số giá trị trong tập dữ liệu. Những vị trí còn thiếu đó có thể
+được biểu thị bằng số 0, số âm, dấu cách hoặc ký tự đặc biệt.
+
+- Hiện tượng này có thể do sai sót trong quá trình thu thập dữ liệu, hoặc do dữ liệu bị hỏng (corruption) trong quá trình thu thập dữ liệu.
+lưu trữ và trao đổi.
+
+- Hầu hết các thuật toán ML không thể hoạt động với Thiếu dữ liệu hoặc nếu có thì kết quả không đáng tin cậy. Vì thế,
+chúng ta cần loại bỏ vấn đề này trước khi thực hiện các bước lập mô hình dữ liệu. 
+
+
+ 
+
+** BTVN 
+Cau1:
+Dữ liệu bị thiếu (missing data) là thông tin hoặc giá trị dữ liệu không tồn tại hoặc không được ghi lại trong tập dữ liệu. 
+Điều này có thể xảy ra do nhiều nguyên nhân, bao gồm việc không thu thập đầy đủ thông tin từ nguồn dữ liệu, lỗi trong quá trình nhập liệu,
+ hay các giá trị không hợp lệ.
+
+Xử lý dữ liệu bị thiếu là một bước quan trọng trong quá trình phân tích dữ liệu. Lý do chúng ta cần xử lý dữ liệu bị thiếu bao gồm:
+
+1. Đảm bảo tính chính xác và tin cậy: Dữ liệu bị thiếu có thể ảnh hưởng đến độ tin cậy và chính xác của các kết quả phân tích. 
+Việc xử lý dữ liệu bị thiếu giúp đảm bảo rằng dữ liệu được đầy đủ và chính xác, giúp cho quá trình phân tích trở nên tin cậy hơn.
+
+2. Tối ưu kết quả phân tích: Dữ liệu bị thiếu có thể ảnh hưởng đến hiệu suất và kết quả của các phương pháp phân tích dữ liệu. 
+Bằng cách xử lý dữ liệu bị thiếu một cách hợp lý, chúng ta có thể tối ưu hóa quá trình phân tích và đảm bảo rằng kết quả đạt được là 
+chính xác và cung cấp thông tin hữu ích.
+
+3. Tránh sai lệch và trống trơi trong phân tích: Khi không xử lý dữ liệu bị thiếu, các phương pháp phân tích có thể tạo ra sai lệch và không chính xác.
+ Việc xử lý dữ liệu bị thiếu giúp tránh các sai lệch này và đảm bảo rằng không có thông tin quan trọng bị bỏ sót trong quá trình phân tích.
+
+Cau 2:
+Để kiểm tra và đếm số lượng dữ liệu bị thiếu trong một DataFrame hoặc Series sử dụng thư viện pandas, bạn có thể sử dụng các phương thức sau:
+
+1. Phương thức `.isnull()`: Phương thức này trả về một DataFrame/Series mới với các giá trị True cho các phần tử là dữ liệu bị thiếu và False cho các phần tử không bị thiếu.
+
+
+2. Phương thức `.sum()`: Phương thức này trả về tổng số lượng dữ liệu bị thiếu theo cột của DataFrame/Series.
+
+Câu 3:
+
+Khi xử lý dữ liệu bị thiếu, có thể sử dụng phương pháp loại bỏ dữ liệu bị thiếu (`dropna()`) trong một số trường hợp sau đây:
+
+1. Khi số lượng dữ liệu bị thiếu là rất nhỏ: Nếu số lượng dữ liệu bị thiếu chỉ chiếm một phần nhỏ trong toàn bộ tập dữ liệu và không ảnh hưởng đáng kể đến khả năng phân tích và hiểu được dữ liệu, 
+ta có thể thoải mái loại bỏ các hàng hoặc cột chứa dữ liệu bị thiếu.
+
+2. Khi dữ liệu bị thiếu ngẫu nhiên: Nếu dữ liệu bị thiếu không phụ thuộc vào các biến hoặc đặc điểm khác, việc loại bỏ các hàng hoặc cột chứa dữ liệu bị thiếu không gây mất mát thông tin quan trọng.
+ Tuy nhiên, cần đảm bảo rằng quá trình loại bỏ dữ liệu bị thiếu không gây thiếu sót thông tin
+
+
+Khi xử lý dữ liệu bị thiếu, có thể sử dụng phương pháp điền dữ liệu bị thiếu (`fillna()`) trong một số trường hợp sau đây:
+
+1. Khi số lượng dữ liệu bị thiếu là nhỏ và có một mẫu dữ liệu rõ ràng: Khi mất mát dữ liệu ở một số quan sát nhất định, ta có thể điền giá trị bị thiếu bằng một giá trị xác định dựa trên các mẫu dữ liệu còn lại. 
+Ví dụ, có thể điền giá trị bị thiếu bằng trung bình, trung vị hoặc giá trị phổ biến nhất trong cột đó.
+
+2. Khi dữ liệu bị thiếu theo mẫu: Trong trường hợp dữ liệu bị thiếu tuân theo một mô hình nào đó, ta có thể sử dụng các kỹ thuật thông tin cung cấp từ các biến khác để điền giá trị thiếu. 
+Ví dụ, nếu dữ liệu bị thiếu theo ngày, ta có thể điền giá trị bị thiếu bằng một giá trị sau hoặc trước đó.
+
+3. Khi dữ liệu bị thiếu không phải là ngẫu nhiên: Trong trường hợp dữ liệu bị thiếu có một mô hình hoặc có sự phụ thuộc vào các biến khác, ta có thể sử dụng các kỹ thuật tiên đoán hoặc mô hình hồi qui để điền giá trị bị thiếu. 
+Ví dụ, ta có thể sử dụng mô hình hồi qui tuyến tính để dự đoán giá trị bị thiếu dựa trên mối quan hệ với các biến khác.
+
+
+Câu 4 :
+Để sử dụng giá trị trung bình, trung vị hoặc mode để thay thế dữ liệu bị thiếu, bạn có thể sử dụng phương pháp `fillna()` và tham số `value` để chỉ định giá trị thay thế.
+
+Câu 5:
+
+Câu 6:
+Để xác định và xử lý dữ liệu bị thiếu không ngẫu nhiên, tôi sẽ thực hiện các bước sau:
+
+1. Đánh giá dữ liệu: Đầu tiên, tôi sẽ kiểm tra tỷ lệ dữ liệu bị thiếu trong từng cột và xác định xem liệu nó có tính không ngẫu nhiên hay không. 
+Tôi sẽ sử dụng các biểu đồ và phân tích thống kê để hiểu rõ hơn về tính chất của dữ liệu bị thiếu.
+
+2. Phân tích nguyên nhân: Sau đó, tôi sẽ cố gắng tìm hiểu tại sao dữ liệu bị thiếu. Có thể có những nguyên nhân như quy trình thu thập dữ liệu không hoàn chỉnh, lỗi hệ thống hoặc nguyên nhân chủ quan từ người sử dụng. 
+Tìm hiểu nguyên nhân sẽ giúp tôi xác định các phương pháp xử lý phù hợp.
+
+3. Xử lý dữ liệu bị thiếu: Dựa trên nguyên nhân và tính chất của dữ liệu bị thiếu, tôi có thể áp dụng một số phương pháp như:
+   a. Xóa: Nếu dữ liệu bị thiếu không quá nhiều và không có mục tiêu quan trọng, tôi có thể xóa các hàng hoặc cột chứa dữ liệu bị thiếu.
+   b. Điền giá trị: Tùy thuộc vào kiểu dữ liệu và phân phối của nó, tôi có thể điền giá trị thiếu bằng cách sử dụng giá trị trung bình, giá trị mode, hoặc các phương pháp tiếp cận khác.
+   c. Mô hình dự đoán: Nếu dữ liệu bị thiếu không quá nhiều, tôi có thể sử dụng các mô hình dự đoán để dự đoán các giá trị bị thiếu dựa trên các thuộc tính khác.
+
+4. Kiểm tra hiệu quả: Sau khi xử lý dữ liệu bị thiếu, tôi sẽ kiểm tra lại để đảm bảo dữ liệu đã được xử lý đúng cách và không gây biến dạng dữ liệu ban đầu.
+
+Việc xử lý dữ liệu bị thiếu không ngẫu nhiên quan trọng để đảm bảo tính chính xác và đáng tin cậy của kết quả phân tích và giúp cung cấp cái nhìn toàn diện hơn về dữ liệu.
+
+Câu 7;
+Chào bạn! Để trực quan hóa dữ liệu bị thiếu trong DataFrame, bạn có thể sử dụng các thư viện như matplotlib hoặc seaborn trong Python. 
+Dưới đây là một số cách bạn có thể làm điều đó:
+
+1. Sử dụng heatmap: Bạn có thể sử dụng heatmap để biểu diễn các giá trị bị thiếu trong DataFrame. 
+Heatmap sẽ tạo ra một biểu đồ màu sắc, trong đó mỗi ô thể hiện một giá trị và màu sắc của ô sẽ thể hiện mức độ thiếu của giá trị đó.
+
+2. Sử dụng bar plot: Bạn có thể sử dụng bar plot để hiển thị tỷ lệ giá trị bị thiếu trong từng cột dữ liệu. 
+Điều này sẽ giúp bạn nhìn thấy các cột nào có nhiều giá trị bị thiếu hơn so với các cột khác.
+
+3. Sử dụng line plot: Nếu dữ liệu bị thiếu được gắn với thời gian, bạn có thể sử dụng line plot để thấy xu hướng thiếu dữ liệu theo thời gian.
+ Điều này có thể giúp bạn xác định xem liệu dữ liệu bị thiếu có phụ thuộc vào thời gian hay không.
+
+4. Sử dụng histogram: Nếu dữ liệu bị thiếu trong một cột được phân phối theo một mô hình, bạn có thể tạo histogram để hiển thị mức độ thiếu của từng giá trị.
+ Điều này cho phép bạn thấy được phân bố của các giá trị bị thiếu.
+
+Ngoài ra, bạn cũng có thể tùy chỉnh biểu đồ theo yêu cầu và sở thích của riêng bạn.
+
+Câu 8:
+Việc xử lý dữ liệu bị thiếu có thể ảnh hưởng đáng kể đến hiệu suất của các mô hình học máy. 
+Dữ liệu bị thiếu có thể gây ra các vấn đề như Overfitting (quá khớp), Underfitting (quá đơn giản), hoặc làm mất đi các mẫu dữ liệu quan trọng.
+
+"Overfitting" và "underfitting" là hai vấn đề phổ biến trong phân tích dữ liệu và mô hình hóa dữ liệu. Đây là hai tình trạng khi mô hình dự đoán không hoạt động tốt trong việc áp dụng cho dữ liệu mới.
+
+Khi dữ liệu bị thiếu, có thể dẫn đến "overfitting" hoặc "underfitting", tùy thuộc vào cách mà dữ liệu bị thiếu và cách chúng ta xử lý nó.
+
+- "Overfitting" xảy ra khi mô hình của chúng ta quá phức tạp và quá khớp với dữ liệu mà chúng ta sử dụng để huấn luyện mô hình.
+ Khi chúng ta áp dụng mô hình này cho dữ liệu mới, nó thường không dự đoán tốt và không tổng quát hóa được. 
+Dữ liệu thiếu có thể làm tăng nguy cơ overfitting bởi vì mô hình có xu hướng gắn bó với những thông tin có sẵn và không có độ linh hoạt để xử lý dữ liệu mới.
+
+- "Underfitting" xảy ra khi mô hình của chúng ta quá đơn giản và không thể gắn bó với các mẫu dữ liệu cụ thể.
+ Mô hình này không thể học được các mẫu tiềm ẩn hoặc mối quan hệ phức tạp giữa các biến. 
+Khi áp dụng cho dữ liệu mới, mô hình underfitting cũng sẽ không dự đoán tốt.
+
+
+câu 9:
+
+Chắc chắn, việc đảm bảo rằng dữ liệu đã được xử lý không còn thiếu sót là điều rất quan trọng trong công việc của một nhà phân tích dữ liệu.
+ Dưới đây là một số phương pháp tôi thường áp dụng để kiểm tra và đảm bảo tính đầy đủ của dữ liệu:
+
+1. Kiểm tra dữ liệu bị thiếu: Tôi sử dụng các công cụ như Python hoặc SQL để phân tích dữ liệu và xem xét tỷ lệ dữ liệu bị thiếu.
+ Từ đó, tôi có thể xác định xem dữ liệu thiếu có mô hình hoặc tương quan nào không.
+
+2. Xử lý dữ liệu bị thiếu: Tùy thuộc vào nguồn dữ liệu, tôi áp dụng các phương pháp xử lý dữ liệu bị thiếu như điền giá trị bằng trung bình hoặc giá trị tương tự,
+ hoặc loại bỏ các hàng hoặc cột chứa dữ liệu bị thiếu nếu số lượng dữ liệu bị mất quá lớn và không thể bổ sung.
+
+3. Xác minh lại dữ liệu: Tôi thực hiện việc kiểm tra và xác minh dữ liệu đã được xử lý bằng cách so sánh với nguồn dữ liệu gốc.
+ Nếu có sai khác lớn, tôi sẽ kiểm tra lại quy trình xử lý và tìm hiểu nguyên nhân dẫn đến sai khác.
+
+4. Visualize và kiểm tra biên mạnh của dữ liệu: Bằng cách sử dụng các công cụ như biểu đồ và biểu đồ phân phối, tôi kiểm tra và đánh giá tính biên mạnh của dữ liệu đã được xử lý.
+ Nếu có giá trị quá lớn hoặc quá nhỏ, tôi kiểm tra lại quy trình xử lý để đảm bảo tính chính xác và phù hợp.
+
+5. Đối chiếu với các bộ chỉ số hoặc tiêu chuẩn chất lượng dữ liệu: Tôi so sánh dữ liệu đã được xử lý với các tiêu chuẩn chất lượng dữ liệu được thiết lập trước đó (nếu có).
+ Nếu dữ liệu không đáp ứng tiêu chuẩn chất lượng, tôi sẽ tiếp tục làm việc với nguồn dữ liệu gốc để có thể tạo ra dữ liệu đầy đủ và chính xác hơn.
+
+
+
+** Data transformation
+
+- Chuyển đổi dữ liệu để phù hợp huấn luyện mô hình
+
+
+-Chuẩn hóa chuyển đổi phạm vi giá trị của tất cả các tính năng thành 0 đến 1.
+
+ y = (x - min)/ (max - min)
+
+x : giá trị đầu vào 
+y: giá trị sau khi chuẩn hóa
+max/min: giá trị lớn nhất và nhỏ nhất trong toàn bộ tập dữ liệu
+
+
+
+Tiêu chuẩn hóa chuyển đổi phân phối của tất cả các tính năng thành phân phối bình thường (là một
+phân phối có giá trị trung bình = 0 và độ lệch chuẩn std = 1).
+
+x_standardized = (x - mean(x)) / std(x)
+
+Trong đó, x_standardized là giá trị đã chuẩn hóa theo z-score, 
+x là giá trị ban đầu trong dữ liệu, 
+mean(x) là giá trị trung bình của dữ liệu và
+ std(x) là độ lệch chuẩn của dữ liệu. 
+Việc sử dụng standardization giúp đưa các giá trị về cùng một tỷ lệ và 
+giảm thiểu ảnh hưởng của các giá trị ngoại lệ (outlier) đến kết quả phân tích.
+
+
+
+
+** Encode Categorical data
+Encode Categorical data là quá trình chuyển đổi dữ liệu phân loại (categorical data) thành dạng số 
+để có thể sử dụng trong các thuật toán máy học hoặc phân tích dữ liệu.
+
+Có hai phương pháp phổ biến để encode categorical data là Label Encoding và One-Hot Encoding.
+
+- Label Encoding: Phương pháp này gán một số duy nhất cho mỗi nhóm/phân loại. Ví dụ, nếu có 3 nhóm A, B và C, ta có thể gán như sau: A=0, B=1, C=2. 
+Tuy nhiên, phương pháp này có thể gây hiểu lầm rằng có mối quan hệ thứ tự giữa các nhóm.
+
+- One-Hot Encoding: Phương pháp này tạo thành một ma trận mới với đặc trưng nhị phân (0 và 1), trong đó mỗi cột tương ứng với một nhóm/phân loại. 
+Ví dụ, với 3 nhóm A, B và C, ta tạo ra 3 cột: A, B, C. Với dữ liệu ban đầu, mỗi hàng tương ứng sẽ có 1 tại cột của nhóm tương ứng và 0 ở cột các nhóm khác.
+
+Dummy variable encoding là một phương pháp để chuyển đổi các biến phân loại (categorical variables) 
+thành các biến giả (dummy variables) dưới dạng 0 và 1 để có thể sử dụng trong các thuật toán máy học và phân tích dữ liệu
+
+
+
+
+*** Machine Learning ***
+*Data set
+DataSet giúp ích ở đây rất lớn vì DataSet cho phép lưu trữ dữ liệu và chỉnh sửa tại ‘local cache’, hay gọi là offline mode. 
+
+Có thể xem xét và xử lý thông tin trong khi ngắt kết nối. 
+
+Một khi chỉnh sửa và xem xong thì tạo một kết nối và update dữ liệu từ local vào Data Source.
+Dữ liệu trong DataSet được lưu giữ dưới dạng một Collection các Tables 
+và bạn phải cần phải xử lý thông qua các lớp DataTable -> DataRow và DataColumn
+
+
+Dataset (bộ dữ liệu) là một tập hợp các thông tin, dữ liệu hoặc số liệu được tổ chức theo một cấu trúc nhất định.
+ Các bộ dữ liệu thường chứa các mẫu, thông tin hoặc quan sát thống kê về một vấn đề cụ thể.
+
+Mỗi dataset bao gồm các bản ghi hoặc hàng, trong đó mỗi hàng chứa các thuộc tính hoặc cột khác nhau (gọi là các trường).
+ Ví dụ, một bộ dữ liệu của người dùng có thể chứa các thông tin như tên, tuổi, địa chỉ và số điện thoại.
+
+
+
+*ML là gì:
+Học máy (ML) là một loại thuật toán cho phép các ứng dụng phần mềm
+trở nên chính xác hơn trong việc dự đoán kết quả mà không cần lập trình rõ ràng.
+Cơ bản tiền đề của học máy là xây dựng các thuật toán có thể nhận dữ liệu đầu vào và sử dụng dữ liệu thống kê
+phân tích để dự đoán đầu ra trong khi cập nhật đầu ra khi có dữ liệu mới.
+
+* Lịch sử ML:
+1. Thập kỷ 1950: Machine Learning bắt đầu từ khái niệm "học máy" của nhà toán học Ủy viên Alan Turing, mở ra nền tảng cho những nghiên cứu sau này.
+
+2. Thập kỷ 1960-1970: Các nhà khoa học như Frank Rosenblatt đã phát triển mạng nơ-ron nhân tạo và thuật toán Perceptron, tạo ra sự quan tâm đáng kể đối với Machine Learning.
+
+3. Thập kỷ 1980-1990: Kỹ thuật "học hợp tác" đã xuất hiện và các thuật toán tiên tiến như Support Vector Machines (SVM) và Neural Networks đã được phát triển.
+
+4. Thập kỷ 1990-2000: Công nghệ máy học thống kê và các thuật toán học suy luận (inductive learning) như C4.5 và Random Forests đã trở nên nổi tiếng.
+
+5. Thập kỷ 2000-2010: Machine Learning đã trở thành một lĩnh vực quan trọng với sự phổ biến của phương pháp học điều chỉnh (ensemble learning) và Deep Learning.
+
+6. Thập kỷ 2010-nay: Deep Learning đã đạt được sự chú ý lớn, đóng góp vào việc tạo ra các mô hình học máy phức tạp và hiệu quả.
+ Công nghệ này đã được sử dụng rộng rãi trong các lĩnh vực như nhận dạng hình ảnh và xử lý ngôn ngữ tự nhiên.
+
+* Type of ML:
+1. Học có giám sát Supervised Learning: Loại học máy này liên quan đến việc đào tạo một mô hình bằng cách sử dụng dữ liệu được dán nhãn. Thuật toán học hỏi từ các cặp đầu vào-đầu ra và có thể đưa ra dự đoán về dữ liệu mới, chưa được nhìn thấy.
+
+2. Học không giám sát  Unsupervised Learning: Trong loại học máy này, mô hình được thiết kế để tìm các mẫu hoặc cấu trúc trong dữ liệu chưa được gắn nhãn. Nó không có quyền truy cập vào bất kỳ biến hoặc nhãn mục tiêu nào.
+
+3. Học tăng cường Reinforcement Learning: Loại học máy này tập trung vào việc dạy một tác nhân cách đưa ra quyết định trong môi trường để tối đa hóa phần thưởng nhất định. Tác nhân học hỏi bằng cách nhận phản hồi và điều chỉnh hành động của mình cho phù hợp.
+
+
+
+4. Học bán giám sát Semi-Supervised Learning: Sự kết hợp giữa học có giám sát và không giám sát. Nó sử dụng một lượng nhỏ dữ liệu được gắn nhãn cùng với lượng lớn hơn dữ liệu không được gắn nhãn để xây dựng mô hình.
+
+5. Học chuyển giao Transfer Learning: Kỹ thuật này liên quan đến việc sử dụng kiến thức thu được từ việc giải một vấn đề để đẩy nhanh quá trình học tập hoặc cải thiện hiệu suất của một vấn đề khác nhưng có liên quan.
+
+6. Học sâu Deep Learning: Một trường con của học máy sử dụng mạng lưới thần kinh sâu để tìm hiểu cách biểu diễn dữ liệu theo cấp bậc, cho phép mô hình tự động trích xuất các tính năng và đưa ra dự đoán.
+
+
+*Học có giám sát Supervised Learning
+
+- Trong Học có giám sát, hệ thống AI được trình bày với dữ liệu được dán nhãn, nghĩa là mỗi
+dữ liệu được gắn thẻ với nhãn chính xác.
+
+- Mục đích là để ước tính hàm ánh xạ tốt đến mức khi bạn có dữ liệu đầu vào mới (x) thì
+bạn có thể dự đoán các biến đầu ra (Y) cho dữ liệu đó.
+Các loại hình học tập có giám sát:
+
+Phân loại: Một vấn đề phân loại là khi biến đầu ra là một danh mục, chẳng hạn như
+“đỏ” hoặc “xanh” hoặc “có bệnh” và “không có bệnh”.
+
+Hồi quy: Vấn đề hồi quy là khi biến đầu ra là một giá trị thực, chẳng hạn như
+“đô la” hoặc “trọng lượng”.
+
+* Học không giám sát  Unsupervised Learning:
+- Trong học tập không giám sát, hệ thống AI được trình bày với dữ liệu không được gắn nhãn, chưa được phân loại và
+thuật toán của hệ thống hoạt động trên dữ liệu mà không cần đào tạo trước.
+
+- Đầu ra phụ thuộc vào các thuật toán được mã hóa. Đưa một hệ thống vào học tập không giám sát là
+một cách để kiểm tra AI.
+
+Mục tiêu của Unsupervised Learning là phân loại hoặc phân cụm dữ liệu mảng (array) vào các nhóm đồng nhất dựa trên tính chất tương đồng.
+ Các thuật toán chủ yếu thường được sử dụng trong Unsupervised Learning bao gồm K-means clustering, hierarchical clustering và t-SNE (t-distributed Stochastic Neighbor Embedding).
+
+Một ứng dụng phổ biến của Unsupervised Learning là phát hiện bất thường (anomaly detection) trong dữ liệu, nghĩa là xác định những điểm dữ liệu bất thường so với phân phối chung của dữ liệu đã biết trước.
+ Unsupervised Learning cũng có thể được sử dụng để giảm chiều (dimensionality reduction) dữ liệu, giúp giảm thiểu nhiễu và các thông tin không cần thiết trong dữ liệu đầu vào.
+
+*Học tăng cường Reinforcement Learning
+
+Thuật toán học tăng cường hoặc tác nhân học bằng cách tương tác với môi trường của nó. đại lý
+nhận được phần thưởng nếu thực hiện đúng và bị phạt nếu thực hiện sai.
+
+- Tác nhân học mà không cần sự can thiệp của con người bằng cách tối đa hóa phần thưởng và giảm thiểu phần thưởng của nó.
+hình phạt. Nó là một loại lập trình động đào tạo các thuật toán bằng cách sử dụng hệ thống khen thưởng và
+sự trừng phạt.
+
+Trong Reinforcement Learning, hệ thống được gọi là "agent" và nó có thể thực hiện các hành động trong môi trường.
+ Môi trường đánh giá hành động của agent và cung cấp cho nó các phần thưởng hoặc hình phạt dựa trên hiệu năng của các hành động đó.
+
+Mục tiêu của agent là học cách lựa chọn các hành động tối ưu để tối đa hoá tổng phần thưởng nhận được trong quá trình tương tác với môi trường.
+ Agent sử dụng phương pháp thử và sai để khám phá các hành động mới và cải thiện chiến lược của mình theo thời gian.
+
+Reinforcement Learning được sử dụng rộng rãi trong các ứng dụng như tự động lái xe, điều khiển robot, chơi game và quyết định tối ưu hóa trong các lĩnh vực khác nhau.
+ Nó là một lĩnh vực nghiên cứu quan trọng trong AI với nhiều phương pháp và thuật toán đa dạng.
