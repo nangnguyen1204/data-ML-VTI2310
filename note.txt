@@ -347,3 +347,42 @@ Mục tiêu của agent là học cách lựa chọn các hành động tối ư
 
 Reinforcement Learning được sử dụng rộng rãi trong các ứng dụng như tự động lái xe, điều khiển robot, chơi game và quyết định tối ưu hóa trong các lĩnh vực khác nhau.
  Nó là một lĩnh vực nghiên cứu quan trọng trong AI với nhiều phương pháp và thuật toán đa dạng.
+
+
+*** Feature selecting
+
+* Feature selecting : là phương pháp giảm biến đầu vào cho mô hình của bạn bằng cách chỉ sử dụng dữ liệu có liên quan và loại bỏ nhiễu trong dữ liệu.
+
+** Feature selecting chia 2 loại:
+
+* Supervised Models: Lựa chọn tính năng được giám sát đề cập đến phương pháp sử dụng lớp nhãn đầu ra để lựa chọn tính năng. 
+			Họ sử dụng các biến mục tiêu để xác định các biến có thể làm tăng hiệu quả mô hình
+
+* Unsupervised Models: Lựa chọn tính năng không được giám sát đề cập đến phương thức không cần lớp nhãn đầu ra để lựa chọn tính năng
+			Sử dụng cho dữ liệu chưa được gắn nhãn 
+
+
+** Supervised Models có thể chia làm 3:
+
+* Filter Method (phương pháp lọc): Trong phương pháp này, các tính năng bị loại bỏ dựa trên mối quan hệ của chúng với đầu ra 
+					hoặc cách chúng tương quan với đầu ra. Chúng tôi sử dụng mối tương quan để kiểm tra xem các tính năng có tương quan tích cực hay tiêu cực với nhãn đầu ra và loại bỏ các tính năng tương ứng
+
+* Wrapper Method (phương pháp gói): Chúng tôi chia dữ liệu của mình thành các tập hợp con và huấn luyện một mô hình bằng cách sử dụng dữ liệu này.
+					 Dựa trên kết quả đầu ra của mô hình, chúng tôi thêm và bớt các tính năng và huấn luyện lại mô hình
+					Nó hình thành các tập hợp con bằng cách sử dụng cách tiếp cận tham lam và đánh giá tính chính xác của tất cả các tổ hợp đặc trưng có thể có
+
+* Intrinsic Method (phương pháp nội tại): Phương pháp này kết hợp các đặc tính của cả phương pháp Filter và Wrapper để tạo ra tập hợp con tốt nhất
+
+* chiều dữ liệu = số lượng feature
+
+* bài toán hồi quy trả về giá trị liên tục 
+Hàm ánh xạ được sử dụng để ánh xạ các giá trị tới đầu ra liên tục.
+
+* bài toán phân loại trả về giá trị rời rạc
+Chức năng ánh xạ cơ bản được sử dụng để ánh xạ các giá trị đến các lớp được xác định trước. 
+
+* overfitting : như là học thuộc lòng theo tập train , quá khớp với tập train khi áp dụng vào tập test lại ra kết quả không tốt
+* underfitting: ngược lại , học không được gì từ tập train dẫn đến áp dụng vào tập test kết quả không tốt 
+
+
+
