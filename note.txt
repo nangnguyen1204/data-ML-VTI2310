@@ -385,4 +385,63 @@ Chức năng ánh xạ cơ bản được sử dụng để ánh xạ các giá 
 * underfitting: ngược lại , học không được gì từ tập train dẫn đến áp dụng vào tập test kết quả không tốt 
 
 
+**** Điều chuẩn - Regularization
+* Regularization là một kĩ thuật quan trọng trong học máy sử dụng để làm giảm overfiting, phổ biến có Lasso, Elastic Net và Ridge
 
+* Ridge Regression là một phương pháp hồi quy trong học máy được sử dụng để giải quyết vấn đề đa cộng tuyến (multicollinearity) trong mô hình hồi quy.
+ Khi các biến độc lập trong mô hình tương quan mạnh với nhau, đa cộng tuyến xảy ra và có thể dẫn đến các vấn đề như sự không ổn định của các hệ số ước lượng và khả năng khớp mô hình kém.
+
+Trong hồi quy Ridge, chúng ta kiểm soát hàm mất mát bằng cách áp dụng L2 regularization
+
+
+from sklearn.linear_model import Ridge
+
+# Tạo một đối tượng Ridge Regression với alpha (tham số kiểm soát) đã cho
+ridge_regression = Ridge(alpha=1.0)
+
+# Xây dựng mô hình trên dữ liệu huấn luyện
+ridge_regression.fit(X_train, y_train)
+
+# Dự đoán giá trị
+y_pred = ridge_regression.predict(X_test)
+
+
+*Lasso Regression là một phương pháp hồi quy trong học máy được sử dụng để xử lý vấn đề lựa chọn biến (variable selection)
+ và giảm số lượng biến không quan trọng trong mô hình hồi quy.
+
+Lasso Regression giống với Ridge Regression trong việc thêm một thành phần kiểm soát vào hàm mất mát của mô hình hồi quy.
+ Tuy nhiên, thay vì sử dụng bình phương của các hệ số ước lượng, Lasso sử dụng tổng giá trị tuyệt đối của các hệ số ước lượng
+
+from sklearn.linear_model import Lasso
+
+reg_lasso = Lasso(alpha = 1.0)
+reg_lasso.fit(X_train, y_train)
+
+# Sai số huấn luyện trên tập train
+print(reg_lasso.score(X_train, y_train))
+
+# Hệ số hồi qui và hệ số chặn
+print(reg_lasso.coef_)
+print(reg_lasso.intercept_)
+
+*
+Elastic Net là sự kết hợp của cả Ridge và Lasso. Nó sử dụng cả hai hệ số regularization alpha và lambda.
+
+from sklearn.linear_model import ElasticNet
+from sklearn.datasets import make_regression
+
+regr = ElasticNet(alpha = 1.0, l1_ratio=0.5, random_state=0)
+regr.fit(X_train, y_train)
+print(regr.coef_)
+print(regr.intercept_)
+
+* Chính quy hóa L1 (Chính quy hóa Lasso): Trong chính quy hóa L1 hay còn gọi là chính quy hóa Lasso, một thuật ngữ bổ sung được thêm vào hàm mất mát của mô hình hồi quy tuyến tính dựa trên tổng giá trị tuyệt đối của các hệ số ước tính.
+ Nó được biểu diễn bằng cách cộng tổng giá trị tuyệt đối của các hệ số nhân với tham số chính quy alpha.
+ Chính quy hóa L1 thúc đẩy tính thưa thớt bằng cách thu nhỏ hệ số của các tính năng ít quan trọng hơn về 0, thực hiện lựa chọn tính năng một cách hiệu quả.
+
+* Chính quy hóa L2 (Chính quy hóa ridge): Chính quy hóa L2, còn được gọi là chính quy hóa sườn, thêm một thuật ngữ bổ sung vào hàm mất mát dựa trên tổng các giá trị bình phương của các hệ số ước tính.
+ Nó được biểu diễn bằng cách cộng tổng giá trị bình phương của các hệ số nhân với tham số chính quy alpha. Việc chính quy hóa L2 ngăn chặn sự thay đổi lớn trong các hệ số và khuyến khích mô hình phân phối tác động của các tính năng khác nhau một cách đồng đều hơn.
+ Nó không buộc các hệ số về 0 và thường hiệu quả hơn khi tất cả các tính năng đều có khả năng phù hợp.
+
+* Hàm mất mát của mô hình hồi quy là một hàm số dùng để đo lường sai số hoặc khoảng cách giữa giá trị dự đoán từ mô hình và giá trị thực tế của biến phụ thuộc.
+ Mục tiêu của mô hình hồi quy là tìm ra bộ tham số tối thiểu của hàm mất mát để dự đoán gần nhất giá trị thực tế.
